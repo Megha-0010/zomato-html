@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Zomato</title>
+	<link rel="stylesheet"  href="../MDB/css/bootstrap.css">
+	<link rel="stylesheet" href="../MDB/css/mdb.css">
+</head>
+<body>
+<div class="container-fluid ">
+	<div class="row">
+		<img src="../image/zomato.png" width="20%" height="50px">
+		<p class=" ml-2 mt-4">Order food online from Combos Jumbos Mumbos, Yeshwantpur, Bangalore and get great offers and super-fast delivery on Zomato. Order food online from Combos Jumbos Mumbos, Yeshwantpur, Bangalore and get great offers and super-fast delivery on Zomato. Chicken Momo</p>
+		<button class="btn btn-danger text-white">Order Now</button>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row ">
+		<table class="table m-2">
+			<thead class="bg-danger text-white">
+				<tr>
+					<th>S.no</th>
+					<th>Image</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Qty</th>
+					<th>Amount</th>
+				</tr>
+			</thead>
+			<tbody class="table-danger ">
+				 <tr>
+                    <th>1</th>
+                    <td ><img src= ../image/burger.jpg width="60" height="60" /></td>
+                    <th>Burger</th>
+                    <td>151	</td>
+                    <td ><button onclick="decrement('count0',151,'amount1')">-</button>  <span class="count0"> 0 </span><button onclick="increment('count0',151,'amount1')">+</button>
+                    </td>
+                    <td class="amount1">0</td>
+                </tr>
+                 <tr>
+                    <th>2</th>
+                    <td ><img src= ../image/biryani.webp width="60" height="60" /></td>
+                    <td>Biryani</td>
+                    <td>450</td>
+                    <td ><button onclick="decrement('count1',450,'amount2')">-</button>  <span class="count1"> 0 </span><button onclick="increment('count1',450,'amount2')">+</button>
+                    	
+                    </td>
+                    <td class="amount2">0</td>
+                </tr>
+                 <tr>
+                    <th>3</th>
+                    <td ><img src= ../image/crispyChicken.jpg width="60" height="60" /></td>
+                    <td>Crispy Chicken</td>
+                    <td>250</td>
+                  <td ><button onclick="decrement('count2',250,'amount3')">-</button>  <span class="count2"> 0 </span><button onclick="increment('count2',250,'amount3')">+</button>
+                    </td>
+                    <td class="amount3">0</td>
+                </tr>
+                 <tr>
+                    <th>4</th>
+                    <td ><img src= ../image/pasta.jpg width="60" height="60" /></td>
+                    <td>Pasta</td>
+                    <td class="price">180</td>
+                    <td ><button onclick="decrement('count3',180,'amount4')">-</button>  
+                    	<span class="count3"> 0 </span><button onclick="increment('count3',180,'amount4')">+</button>
+                    </td>
+                    <td class="amount4">0</td>
+                </tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<!--Script Code-->
+<script>
+	
+	
+	let items=0
+
+     function increment(className,price,amountClass)
+     {
+     	let classname1 = className
+     	let paisa = price
+     	let amountClass1 = amountClass
+     	let cn = document.querySelector('.'+classname1)
+     	items = cn.innerText
+     	items++
+     	cn.innerText=items+' '
+     	let amt = document.querySelector('.'+amountClass1)
+         amt.innerText=items*paisa
+
+     }
+      function decrement(className,price,amountClass)
+     {
+     	let classname1 = className
+     	let paisa = price
+     	let amountClass1 = amountClass
+     	let cn = document.querySelector('.'+classname1)
+     	items = cn.innerText
+     	items--
+     	if(items<0){
+     	items=0
+     	}
+     	cn.innerText=items+' '
+     	let amt = document.querySelector('.'+amountClass1)
+         amt.innerText=items*paisa
+     }
+</script>
+</body>
+</html>
